@@ -6,9 +6,37 @@
     <description>Recent content in Tags on Personal Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <lastBuildDate>Sun, 27 Aug 2017 23:50:06 +0530</lastBuildDate>
     
 	<atom:link href="https://iampankaj.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>iterm</title>
+      <link>https://iampankaj.com/tags/iterm/</link>
+      <pubDate>Sun, 27 Aug 2017 23:50:06 +0530</pubDate>
+      
+      <guid>https://iampankaj.com/tags/iterm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>oh-my-zsh</title>
+      <link>https://iampankaj.com/tags/oh-my-zsh/</link>
+      <pubDate>Sun, 27 Aug 2017 23:50:06 +0530</pubDate>
+      
+      <guid>https://iampankaj.com/tags/oh-my-zsh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>zsh</title>
+      <link>https://iampankaj.com/tags/zsh/</link>
+      <pubDate>Sun, 27 Aug 2017 23:50:06 +0530</pubDate>
+      
+      <guid>https://iampankaj.com/tags/zsh/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

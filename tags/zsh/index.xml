@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>zsh on Personal Blog</title>
+    <link>https://iampankaj.com/tags/zsh/</link>
+    <description>Recent content in zsh on Personal Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 27 Aug 2017 23:50:06 +0530</lastBuildDate>
+    
+	<atom:link href="https://iampankaj.com/tags/zsh/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Awesome Terminal Setup with iTerm2, ZSH and Oh-My-Zsh</title>
+      <link>https://iampankaj.com/post/iterm-zsh-setup/</link>
+      <pubDate>Sun, 27 Aug 2017 23:50:06 +0530</pubDate>
+      
+      <guid>https://iampankaj.com/post/iterm-zsh-setup/</guid>
+      <description>Are you bored with the default terminal of Mac? Want to turn your terminal into something more interactive and colorful? Well here is the iTerm2 and oh-my-zsh for rescue.
+iTerm2 is a Mac OS terminal replacement, download it from here or install it using homebrew by executing
+1 2  brew install cask brew cask install iterm2   Oh-My-Zsh is an open source, a community-driven framework for managing your zsh configuration.</description>
+    </item>
+    
+  </channel>
+</rss>
