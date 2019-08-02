@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Archive - Personal Blog</title>
+  <title>Global Gitignore - Personal Blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Pankaj Singh" /><meta name="keywords" content="AWS, Ruby, Ruby on Rails, Scala" />
+<meta name="author" content="Pankaj Singh" /><meta name="description" content="global gitignore" /><meta name="keywords" content="git" />
 
 
 
@@ -26,9 +26,7 @@
 <meta name="generator" content="Hugo 0.56.0 with even 4.0.0" />
 
 
-<link rel="canonical" href="https://iampankaj.com/post/" />
-  <link href="https://iampankaj.com/post/index.xml" rel="alternate" type="application/rss+xml" title="Personal Blog" />
-  <link href="https://iampankaj.com/post/index.xml" rel="feed" type="application/rss+xml" title="Personal Blog" />
+<link rel="canonical" href="https://iampankaj.com/post/global-gitignore/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -40,18 +38,26 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Posts" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://iampankaj.com/post/" />
+<meta property="og:title" content="Global Gitignore" />
+<meta property="og:description" content="global gitignore" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://iampankaj.com/post/global-gitignore/" />
+<meta property="article:published_time" content="2017-08-28T15:07:12+05:30" />
+<meta property="article:modified_time" content="2019-08-02T15:07:12+05:30" />
+<meta itemprop="name" content="Global Gitignore">
+<meta itemprop="description" content="global gitignore">
 
-<meta property="og:updated_time" content="2017-08-28T15:07:12+05:30" />
-<meta itemprop="name" content="Posts">
-<meta itemprop="description" content="">
 
+<meta itemprop="datePublished" content="2017-08-28T15:07:12&#43;05:30" />
+<meta itemprop="dateModified" content="2019-08-02T15:07:12&#43;05:30" />
+<meta itemprop="wordCount" content="102">
+
+
+
+<meta itemprop="keywords" content="git," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Posts"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="Global Gitignore"/>
+<meta name="twitter:description" content="global gitignore"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -115,40 +121,99 @@
     <main id="main" class="main">
       <div class="content-wrapper">
         <div id="content" class="content">
-          
-<section id="archive" class="archive">
-      <div class="collection-title">
-        <h2 class="archive-year">2017</h2>
-      </div>
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Global Gitignore</h1>
 
-    <div class="archive-post">
-      <span class="archive-post-time">
-        08-28
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/global-gitignore/" class="archive-post-link">
-          Global Gitignore
-        </a>
-      </span>
+      <div class="post-meta">
+        <span class="post-time"> 2017-08-28 </span>
+        
+          <span class="more-meta"> 102 words </span>
+          <span class="more-meta"> 1 min read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    
+  </div>
+</div>
+    <div class="post-content">
+      <p><code>.gitignore</code> is the git config file where we can declare files and folder to exclude from git commits, such as log files, build files and system generated files. There is a set of certain files which we may need to exclude from the every project and it is a tedious task to add those files in <code>.gitignore</code> manually for each project. To avoid this we can create a global <code>.gitignore</code> file.</p>
+
+<p>Create a <code>.gitignore</code> file in the home directory</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">touch .gitignore</pre></td></tr></table>
+</div>
+</div>
+<p>And then declare the global <code>.gitignore</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">git config --global core.excludesfile ~/.gitignore</pre></td></tr></table>
+</div>
+</div>
+<p><a href="https://github.com/dev-miche/dotfiles/blob/master/.gitignore">Here</a> is the example of my global <code>.gitignore</code>.</p>
+
     </div>
 
-    <div class="archive-post">
-      <span class="archive-post-time">
-        08-27
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/iterm-zsh-setup/" class="archive-post-link">
-          Awesome Terminal Setup with iTerm2, ZSH and Oh-My-Zsh
-        </a>
-      </span>
-    </div></section>
-
-<nav class="pagination">
-  
-  
-</nav>
-        </div>
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Pankaj Singh</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2019-08-02
         
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/git/">git</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/iterm-zsh-setup/">
+            <span class="next-text nav-default">Awesome Terminal Setup with iTerm2, ZSH and Oh-My-Zsh</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'iampankaj-com';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  
+  
+
+  
 
       </div>
     </main>
@@ -196,6 +261,13 @@
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script>
 <script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
 
 
