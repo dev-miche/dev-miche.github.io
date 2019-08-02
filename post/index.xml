@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Personal Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 28 Aug 2017 15:07:12 +0530</lastBuildDate>
+    <lastBuildDate>Thu, 31 Aug 2017 15:13:12 +0530</lastBuildDate>
     
 	<atom:link href="https://iampankaj.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Generate ctags with git hooks</title>
+      <link>https://iampankaj.com/post/exuberant-ctags/</link>
+      <pubDate>Thu, 31 Aug 2017 15:13:12 +0530</pubDate>
+      
+      <guid>https://iampankaj.com/post/exuberant-ctags/</guid>
+      <description>As per Wikipedia definition, Ctags is a programming tool that generates an index (or tag) file of names found in source and header files of various programming languages. Depending on the language, functions, variables, class members, macros and so on may be indexed. These tags allow definitions to be quickly and easily located by a text editor or other utility.
+In other words, Ctags indexes a project’s classes, methods, etc in a file called tag.</description>
+    </item>
     
     <item>
       <title>Global Gitignore</title>

@@ -15,8 +15,8 @@
   </url>
   
   <url>
-    <loc>https://iampankaj.com/post/global-gitignore/</loc>
-    <lastmod>2019-08-02T15:07:12+05:30</lastmod>
+    <loc>https://iampankaj.com/post/exuberant-ctags/</loc>
+    <lastmod>2019-08-02T15:13:12+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -31,6 +31,19 @@
     <loc>https://iampankaj.com/tags/</loc>
     <lastmod>2019-08-28T23:50:06+05:30</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://iampankaj.com/tags/ctag/</loc>
+    <lastmod>2019-08-02T15:13:12+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://iampankaj.com/post/global-gitignore/</loc>
+    <lastmod>2019-08-02T15:07:12+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>

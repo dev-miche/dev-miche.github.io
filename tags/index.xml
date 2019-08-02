@@ -6,10 +6,19 @@
     <description>Recent content in Tags on Personal Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 28 Aug 2017 15:07:12 +0530</lastBuildDate>
+    <lastBuildDate>Thu, 31 Aug 2017 15:13:12 +0530</lastBuildDate>
     
 	<atom:link href="https://iampankaj.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ctag</title>
+      <link>https://iampankaj.com/tags/ctag/</link>
+      <pubDate>Thu, 31 Aug 2017 15:13:12 +0530</pubDate>
+      
+      <guid>https://iampankaj.com/tags/ctag/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>git</title>

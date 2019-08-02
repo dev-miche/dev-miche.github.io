@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Generate ctags with git hooks - Personal Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Pankaj Singh" /><meta name="description" content="Generate ctags with git hooks" /><meta name="keywords" content="ctag" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.56.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://iampankaj.com/post/exuberant-ctags/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Generate ctags with git hooks" />
+<meta property="og:description" content="Generate ctags with git hooks" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://iampankaj.com/post/exuberant-ctags/" />
+<meta property="article:published_time" content="2017-08-31T15:13:12+05:30" />
+<meta property="article:modified_time" content="2019-08-02T15:13:12+05:30" />
+<meta itemprop="name" content="Generate ctags with git hooks">
+<meta itemprop="description" content="Generate ctags with git hooks">
+
+
+<meta itemprop="datePublished" content="2017-08-31T15:13:12&#43;05:30" />
+<meta itemprop="dateModified" content="2019-08-02T15:13:12&#43;05:30" />
+<meta itemprop="wordCount" content="433">
+
+
+
+<meta itemprop="keywords" content="ctag," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Generate ctags with git hooks"/>
+<meta name="twitter:description" content="Generate ctags with git hooks"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Pankaj Singh</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Pankaj Singh</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Generate ctags with git hooks</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-08-31 </span>
+        
+          <span class="more-meta"> 433 words </span>
+          <span class="more-meta"> 3 mins read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#install-ctags">Install Ctags</a></li>
+<li><a href="#vim-setup">Vim Setup</a></li>
+<li><a href="#create-git-hooks">Create git hooks</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<p>As per Wikipedia definition, Ctags is a programming tool that generates an index (or tag) file of names found in source and header files of various programming languages. Depending on the language, functions, variables, class members, macros and so on may be indexed. These tags allow definitions to be quickly and easily located by a text editor or other utility.</p>
+
+<p>In other words, Ctags indexes a project’s classes, methods, etc in a file called tag. So we can navigate back and forth their declaration and definition in a code editor.</p>
+
+<h2 id="install-ctags">Install Ctags</h2>
+
+<p>Install ctag using <a href="https://brew.sh/">Homebrew</a> in OS X</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">brew install ctags</pre></td></tr></table>
+</div>
+</div>
+<p>Or install in Ubuntu</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">sudo apt-get install exuberant-ctags</pre></td></tr></table>
+</div>
+</div>
+<p>To ignore directories, add them in a <code>.ctags</code> file and place it in your home directory.</p>
+
+<p><a href="https://github.com/dev-miche/dotfiles/blob/master/.ctags">This</a> is an example of my <code>.ctags</code>.</p>
+
+<h2 id="vim-setup">Vim Setup</h2>
+
+<p>For vim to find <code>tags</code> file, add the following in <code>.vimrc</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">set tags=./tags;</pre></td></tr></table>
+</div>
+</div>
+<p>Generate <code>tags</code> in you project directory</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">ctags -R .</pre></td></tr></table>
+</div>
+</div>
+<h2 id="create-git-hooks">Create git hooks</h2>
+
+<p>Every time a change is made in any of the project files, we need to re generate the tags. We can create <code>git hooks</code> which will generate tags on add, commit, checkout, etc.</p>
+
+<p>In your home directory</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">mkdir -p ~/.git_template/hooks
+git config --global init.templatedir &#39;~/.git_template&#39;</pre></td></tr></table>
+</div>
+</div>
+<p>Either <a href="https://github.com/dev-miche/dotfiles/tree/master/.git_template/hooks">download</a> the files and place them inside the <code>hooks</code> directory, or create the following files manually and make them executable.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">touch ctags post-checkout post-commit post-merge post-rewrite pre-commit pre-push prepare-commit-msg
+chmod u+x ctags post-checkout post-commit post-merge post-rewrite pre-commit pre-push prepare-commit-msg</pre></td></tr></table>
+</div>
+</div>
+<p>Place the following script in <code>ctags</code> files.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"><span class="cp">#!/bin/sh
+</span><span class="cp"></span>ctags -R --languages<span class="o">=</span>ruby --exclude<span class="o">=</span>.git --exclude<span class="o">=</span>log . <span class="k">$(</span>bundle list --paths<span class="k">)</span></pre></td></tr></table>
+</div>
+</div>
+<p>Place the following script in <code>post-checkout</code> file.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"><span class="cp">#!/bin/sh
+</span><span class="cp"></span><span class="nv">local_hook</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">&#34;</span>/.git_template.local/hooks/post-checkout
+<span class="o">[</span> -f <span class="s2">&#34;</span><span class="nv">$local_hook</span><span class="s2">&#34;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> . <span class="s2">&#34;</span><span class="nv">$local_hook</span><span class="s2">&#34;</span>
+.git/hooks/ctags &gt;/dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span></pre></td></tr></table>
+</div>
+</div>
+<p>Place the following script in <code>post-commit</code> file.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"><span class="cp">#!/bin/sh
+</span><span class="cp"></span><span class="nv">local_hook</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">&#34;</span>/.git_template.local/hooks/post-commit
+<span class="o">[</span> -f <span class="s2">&#34;</span><span class="nv">$local_hook</span><span class="s2">&#34;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> . <span class="s2">&#34;</span><span class="nv">$local_hook</span><span class="s2">&#34;</span>
+.git/hooks/ctags &gt;/dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span></pre></td></tr></table>
+</div>
+</div>
+<p>Place the following script in <code>post-merge</code> file.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"><span class="cp">#!/bin/sh
+</span><span class="cp"></span><span class="nv">local_hook</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">&#34;</span>/.git_template.local/hooks/post-merge
+<span class="o">[</span> -f <span class="s2">&#34;</span><span class="nv">$local_hook</span><span class="s2">&#34;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> . <span class="s2">&#34;</span><span class="nv">$local_hook</span><span class="s2">&#34;</span>
+.git/hooks/ctags &gt;/dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span></pre></td></tr></table>
+</div>
+</div>
+<p>Place the following script in <code>post-rewrite</code> file.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"><span class="cp">#!/bin/sh
+</span><span class="cp"></span><span class="k">case</span> <span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span> in
+  rebase<span class="o">)</span> <span class="nb">exec</span> .git/hooks/post-merge <span class="p">;;</span>
+<span class="k">esac</span></pre></td></tr></table>
+</div>
+</div>
+<p>Place the following script in <code>pre-commit</code> file.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"><span class="cp">#!/bin/sh
+</span><span class="cp"></span><span class="nv">local_hook</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">&#34;</span>/.git_template.local/hooks/pre-commit
+<span class="k">if</span> <span class="o">[</span> -f <span class="s2">&#34;</span><span class="nv">$local_hook</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+  . <span class="s2">&#34;</span><span class="nv">$local_hook</span><span class="s2">&#34;</span>
+<span class="k">fi</span></pre></td></tr></table>
+</div>
+</div>
+<p>Place the following script in <code>pre-push</code> file.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"><span class="cp">#!/bin/sh
+</span><span class="cp"></span><span class="nv">local_hook</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">&#34;</span>/.git_template.local/hooks/pre-push
+<span class="k">if</span> <span class="o">[</span> -f <span class="s2">&#34;</span><span class="nv">$local_hook</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+  . <span class="s2">&#34;</span><span class="nv">$local_hook</span><span class="s2">&#34;</span>
+<span class="k">fi</span></pre></td></tr></table>
+</div>
+</div>
+<p>Place the following script in <code>prepare-commit-msg</code> file.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"><span class="cp">#!/bin/sh
+</span><span class="cp"></span><span class="nv">local_hook</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">&#34;</span>/.git_template.local/hooks/prepare-commit-msg
+<span class="k">if</span> <span class="o">[</span> -f <span class="s2">&#34;</span><span class="nv">$local_hook</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+  . <span class="s2">&#34;</span><span class="nv">$local_hook</span><span class="s2">&#34;</span>
+<span class="k">fi</span></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Pankaj Singh</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2019-08-02
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/ctag/">ctag</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/global-gitignore/">
+            <span class="next-text nav-default">Global Gitignore</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'iampankaj-com';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:er.pankajsingh@hotmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/7161828/miche" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/dev_miche" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.facebook.com/devmiche" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="https://www.linkedin.com/in/pankaj-singh-4b753210a/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/dev-miche" class="iconfont icon-github" title="github"></a>
+  <a href="https://iampankaj.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Pankaj Singh</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
